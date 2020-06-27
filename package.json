@@ -1,0 +1,30 @@
+{
+  "name": "transposed",
+  "version": "1.0.0",
+  "description": "Matrix-based esolang",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/tests.js"
+  },
+  "bin": {
+    "transposed": "./bin/transposed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZippyMagician/Transposed.git"
+  },
+  "keywords": [
+    "esolang",
+    "matrix",
+    "language"
+  ],
+  "author": "Joshua Barnett",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZippyMagician/Transposed/issues"
+  },
+  "homepage": "https://github.com/ZippyMagician/Transposed#readme",
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
+}
