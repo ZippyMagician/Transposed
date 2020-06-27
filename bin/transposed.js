@@ -20,6 +20,6 @@ cli.readArgs(argv, args => {
             if (err) console.error('Could not find file');
             args.shift();
             interpreter.interpret(file, args.map(r => r.match(/[a-z]+|[^a-z]+/gi)).flat(), intOutput);
-        })
+        });
     }
 });
