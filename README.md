@@ -5,7 +5,7 @@ A matrix-based esolang
 Transposed is an esolang based around certain aspects of a mathematical matrix. The code is designed to appear like a matrix, and output is stored in a matrix-like fashion. Certain commands are similarly designed to operate on "rows" and "columns" of the output matrix.
 
 ## Installation
-Install Transposed onto your computer using the command `npm install -g transposed`. You can then run transposed using `transposed "FILE"` with STDIN afterwards. For example: `transposed "C:/Programs/example/itr" 54 C 3`
+Install Transposed onto your computer using the command `npm install -g transposed`. You can then run transposed using `transposed "FILE"` with STDIN afterwards. For example: `transposed "C:/Programs/example.itr" 54 C 3`
 
 ## Specifications
 ```
