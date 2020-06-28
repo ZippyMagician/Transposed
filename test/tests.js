@@ -25,11 +25,15 @@ interpret(code, ['a', 'b', 'c', 'd'], false);
 console.log("CALCULATOR TEST");
 
 code = `01 0E 00 00 00 00 07
-60 75 12 0F 03 48 07
-90 55 02 0F 03 58 00
+60 75 12 0F 03 68 07
+90 55 02 0F 03 78 07
+60 85 13 0F 03 88 07
+60 75 02 0F 03 98 00
 01 01 00 00 00 02 09
-01 01 00 00 00 03 09`;
-interpret(code, ['+', '31', '42'], true);
+01 01 00 00 00 03 09
+01 01 10 10 10 14 09
+01 01 10 10 10 15 09`;
+interpret(code, ['/', '6', '3'], true);
 
 console.log("\nFACTORIAL TEST");
 

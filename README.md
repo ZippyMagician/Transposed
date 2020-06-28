@@ -1,5 +1,5 @@
 # Transposed
-A matrix-based esolang
+A matrix-based esolang https://esolangs.org/wiki/Transposed
 
 ## About
 Transposed is an esolang based around certain aspects of a mathematical matrix. The code is designed to appear like a matrix, and output is stored in a matrix-like fashion. Certain commands are similarly designed to operate on "rows" and "columns" of the output matrix.
