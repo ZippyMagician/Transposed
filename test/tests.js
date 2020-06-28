@@ -30,3 +30,13 @@ code = `01 0E 00 00 00 00 07
 01 01 00 00 00 02 09
 01 01 00 00 00 03 09`;
 interpret(code, ['+', '31', '42'], true);
+
+console.log("\nFACTORIAL TEST");
+
+code = `01 0E 00 1E 07
+10 02 02 02 02
+1F 12 1E 0D 48
+0F 1F 03 68 07
+10 00 38 00 00
+09 00 00 00 00`;
+interpret(code, ['5'], true);

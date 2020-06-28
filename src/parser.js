@@ -55,22 +55,25 @@ module.exports = (stream, stdin, intOutput) => {
                 case 'A':
                     matrix[row].push(item.num);
                     performOnMatrix(matrix, row, (a, b) => a + b);
+                    row = 0;
                     break;
                 case 'B':
                     matrix[row].push(item.num);
                     performOnMatrix(matrix, row, (a, b) => a - b);
+                    row = 0;
                     break;
                 case 'C':
                     matrix[row].push(item.num);
                     performOnMatrix(matrix, row, (a, b) => a / b);
+                    row = 0;
                     break;
                 case 'D':
                     matrix[row].push(item.num);
                     performOnMatrix(matrix, row, (a, b) => a * b);
+                    row = 0;
                     break;
                 case 'E':
-                    performOnRow(matrix, row, pCol - 1, (a, b) => a + b); // Subtract one because the "current" column of the matrix is not actually filled with anything
-                    c[item.num] = matrix[row][0];
+                    c[item.num] = matrix[row][matrix[row].length - 1];
                     break;
                 case 'F':
                     matrix[row].push(c[item.num]);
@@ -88,7 +91,9 @@ module.exports = (stream, stdin, intOutput) => {
         pCol = 0;
     }
 
-    matrix = zip(matrix); // Transpose the matrix
+    let maxLength = matrix.sort((a, b) => b.length - a.length)[0].length;
+    matrix = zip(matrix.map(r => maxLength - r.length > 0 ? r.concat([...Array(maxLength - r.length).fill(0)]) : r)); // Transpose the matrix
+
     for (let row of matrix) {
         row.filter(r => r !== 0).map(item => output(item, intOutput));
         process.stdout.write("\n");
@@ -104,9 +109,8 @@ function performOnRow(matrix, row, col, call) {
 
 function performOnMatrix(matrix, row, call) {
     for (let ind = 0; ind < row; ind++) {
-        let top = matrix[ind];
-        matrix.splice(ind, 1);
-        matrix[0].map((bottom, i) => call(top[i], bottom));
+        let top = matrix.pop();
+        matrix[0] = matrix[0].map((bottom, i) => call(top[i], bottom));
     }
 }
 
