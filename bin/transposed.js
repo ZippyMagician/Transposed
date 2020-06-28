@@ -13,7 +13,7 @@ cli.readArgs(argv, args => {
         fs.readFile(args[0], 'utf8', (err, file) => {
             if (err) console.error('Could not find file');
             args.shift();
-            interpreter.interpret(file, args.map(r => r.match(/[a-z]+|[^a-z]+/gi)).flat(), intOutput);
+            interpreter.interpret(file, args.map(r => r.toString().match(/[a-z]+|[^a-z]+/gi)).flat(), intOutput);
         });
     } else {
         fs.readFile(__dirname + '/' + args[0], 'utf8', (err, file) => {
